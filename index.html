@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A premium LINE LIFF application for seamless location capturing." />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>LIFF Location Capture</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="glass-card">
+        <div class="header">
+          <h1>Location Capture</h1>
+          <p class="subtitle">Securely share your current position</p>
+        </div>
+        
+        <div class="status-container">
+          <div class="status-indicator waiting" id="statusIndicator"></div>
+          <p id="statusMessage">Waiting for action...</p>
+        </div>
+
+        <div class="coordinates hidden" id="coordinatesDisplay">
+          <div class="coordinate-item">
+            <span class="label">Latitude</span>
+            <span class="value" id="latValue">--</span>
+          </div>
+          <div class="coordinate-item">
+            <span class="label">Longitude</span>
+            <span class="value" id="lngValue">--</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="getLocationBtn" class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><polygon points="21 10.5 2 21 5.5 10.5 2 0 21 10.5"></polygon></svg>
+            <span>Get My Location</span>
+          </button>
+          
+          <button id="shareLocationBtn" class="btn-secondary hidden" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+            <span>Share via LINE</span>
+          </button>
+        </div>
+        
+        <div id="error" class="error-toast hidden"></div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
